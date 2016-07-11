@@ -17,4 +17,19 @@ public enum Suits {
     public int getId() {
         return id;
     }
+
+    public static Suits getSuitById(int id) {
+        if (id < 0 || id > 3) {
+            throw new IllegalArgumentException("Значение id для масти должно быть от 0 до 3");
+        }
+
+        for (Suits d : Suits.values()) {
+            if (d.getId() == id) {
+                return d;
+            }
+        }
+
+        // todo сделать свое исключение или пересмотреть структуру метода
+        throw null;
+    }
 }

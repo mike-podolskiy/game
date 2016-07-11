@@ -1,5 +1,6 @@
 package kz.mix.game.model;
 
+// todo реализовать Comparable?
 public enum Denominations {
     //J-
     TWO(0),
@@ -25,5 +26,20 @@ public enum Denominations {
 
     public int getId() {
         return id;
+    }
+
+    public static Denominations getDenominationById(int id) {
+        if (id <0 || id > 12) {
+            throw new IllegalArgumentException("Значение id для номинала должно быть от 0 до 12");
+        }
+
+        for (Denominations d : Denominations.values()) {
+            if (d.getId() == id) {
+                return d;
+            }
+        }
+
+        // todo сделать свое исключение или пересмотреть структуру метода
+        throw null;
     }
 }

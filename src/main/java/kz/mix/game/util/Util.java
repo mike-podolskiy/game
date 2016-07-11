@@ -10,8 +10,6 @@ public final class Util {
     private Util() {}
 
     public static Card getCardByCode(int code) {
-        Card result = null;
-
         int denCode = code % denominationNumber;
         int suitCode = code % suitNumber;
 

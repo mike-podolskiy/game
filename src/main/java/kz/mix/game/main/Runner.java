@@ -6,6 +6,8 @@ import kz.mix.game.model.Denominations;
 import kz.mix.game.model.Suits;
 import kz.mix.game.util.Util;
 
+import java.util.ArrayList;
+
 public class Runner {
     public static void main(String[] args) {
         System.out.println("hello");
@@ -25,6 +27,10 @@ public class Runner {
         System.out.println(Util.getCardByCode(card3.getCode()));
 
         AvailableCardsPool.generateNewPool();
+        System.out.println(AvailableCardsPool.getPool());
+
+
+        AvailableCardsPool.removeCardFromPool(new Card(Denominations.ACE, Suits.CLUB));
         System.out.println(AvailableCardsPool.getPool());
 
     }

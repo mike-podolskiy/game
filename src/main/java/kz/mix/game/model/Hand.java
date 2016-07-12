@@ -20,4 +20,10 @@ public class Hand {
         return currentHand;
     }
 
+    @Override
+    public String toString() {
+        return "Hand{" +
+                "startingHand=" + startingHand +
+                '}';
+    }
 }

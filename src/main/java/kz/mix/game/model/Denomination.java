@@ -1,6 +1,6 @@
 package kz.mix.game.model;
 
-public class Denomination {
+public class Denomination implements Comparable<Denomination> {
     private Denominations denomination;
 
     public Denomination() {
@@ -30,5 +30,10 @@ public class Denomination {
     @Override
     public int hashCode() {
         return denomination.getId();
+    }
+
+    @Override
+    public int compareTo(Denomination o) {
+        return new Integer(this.denomination.getId()).compareTo(o.denomination.getId());
     }
 }

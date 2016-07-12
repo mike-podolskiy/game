@@ -1,5 +1,7 @@
 package kz.mix.game.model;
 
+import kz.mix.game.exception.SuitNotFoundException;
+
 public enum Suits {
     //J-
     SPADE(0), 
@@ -29,7 +31,6 @@ public enum Suits {
             }
         }
 
-        // todo сделать свое исключение или пересмотреть структуру метода
-        throw null;
+        throw new SuitNotFoundException("Не найдена масть для данного значения id: " + id);
     }
 }

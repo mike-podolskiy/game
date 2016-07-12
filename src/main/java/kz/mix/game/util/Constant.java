@@ -12,4 +12,10 @@ public final class Constant {
 
     // размер колоды
     public static final int fullPack = 52;
+
+    // количество карт на руках
+    public static final int handCardNumber = 2;
+
+    // количество карт на столе
+    public static final int tableCardNumber = 5;
 }

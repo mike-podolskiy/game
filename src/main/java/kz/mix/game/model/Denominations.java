@@ -1,6 +1,7 @@
 package kz.mix.game.model;
 
-// todo реализовать Comparable?
+import kz.mix.game.exception.DenominationNotFoundException;
+
 public enum Denominations {
     //J-
     TWO(0),
@@ -39,7 +40,6 @@ public enum Denominations {
             }
         }
 
-        // todo сделать свое исключение или пересмотреть структуру метода
-        throw null;
+        throw new DenominationNotFoundException("Не найден номинал для данного значения id: " + id);
     }
 }

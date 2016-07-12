@@ -7,11 +7,11 @@ import kz.mix.game.model.Table;
 import static kz.mix.game.util.Constant.tableCardNumber;
 import static kz.mix.game.util.Constant.handCardNumber;
 
-public class Logic {
+public class Game {
     private static Table game;
 
-    // параметр массив имен
-    public static void startGame(String[] playersNames) {
+    // параметр имена игроков
+    public static void start(String... playersNames) {
         game = new Table();
 
         if (playersNames.length < 2 || playersNames.length > 3) {
@@ -24,7 +24,7 @@ public class Logic {
 
         for (int i = 0; i < handCardNumber; i++) {
             for (Player player : game.getPlayers()) {
-                player.getHand().getStartingHand().add(AvailableCardsPool.getAndRemoveCardFromPool());
+                player.getHand().getHandCards().add(AvailableCardsPool.getAndRemoveCardFromPool());
             }
         }
 
@@ -33,7 +33,7 @@ public class Logic {
         }
     }
 
-    public static Table getGame() {
+    public static Table get() {
         return game;
     }
 }

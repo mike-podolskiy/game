@@ -4,26 +4,20 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class Hand {
-    private Set<Card> startingHand;
-    private Set<Card> currentHand;
+    private Set<Card> handCards;
 
     public Hand() {
-        startingHand = new HashSet<Card>();
-        currentHand = new HashSet<Card>();
+        handCards = new HashSet<>();
     }
 
-    public Set<Card> getStartingHand() {
-        return startingHand;
-    }
-
-    public Set<Card> getCurrentHand() {
-        return currentHand;
+    public Set<Card> getHandCards() {
+        return handCards;
     }
 
     @Override
     public String toString() {
         return "Hand{" +
-                "startingHand=" + startingHand +
+                "handCards=" + handCards +
                 '}';
     }
 }

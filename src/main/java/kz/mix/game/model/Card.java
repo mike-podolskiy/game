@@ -1,35 +1,29 @@
 package kz.mix.game.model;
 
-import static kz.mix.game.util.Constant.denominationNumber;
+import static kz.mix.game.util.Constant.NUMBER_OF_RANKS;
 
 public class Card {
     private int code;
-    private Denomination denomination;
-    private Suit suit;
+    private RankType rank;
+    private SuitType suit;
 
     /* constructors */
     public Card() {
         throw new UnsupportedOperationException("Нужно указать номинал и масть");
     }
 
-    public Card(Denomination denomination, Suit suit) {
-        this.denomination = denomination;
+    public Card(RankType rank, SuitType suit) {
+        this.rank = rank;
         this.suit = suit;
-        this.code = suit.get().getId() * denominationNumber + denomination.get().getId();
-    }
-
-    public Card(Denominations denomination, Suits suit) {
-        this.denomination = new Denomination(denomination);
-        this.suit = new Suit(suit);
-        this.code = suit.getId() * denominationNumber + denomination.getId();
+        this.code = suit.getId() * NUMBER_OF_RANKS + rank.getId();
     }
 
     /* setters and getters */
-    public Denomination getDenomination() {
-        return denomination;
+    public RankType getRank() {
+        return rank;
     }
 
-    public Suit getSuit() {
+    public SuitType getSuit() {
         return suit;
     }
 
@@ -49,7 +43,7 @@ public class Card {
 
         if (code != card.code)
             return false;
-        if (!denomination.equals(card.denomination))
+        if (!rank.equals(card.rank))
             return false;
         if (!suit.equals(card.suit))
             return false;
@@ -65,7 +59,7 @@ public class Card {
     /* toString */
     @Override
     public String toString() {
-        return denomination.get().toString() + " of " + suit.get().toString();
+        return rank.toString() + " of " + suit.toString();
     }
 
     /* public methods */

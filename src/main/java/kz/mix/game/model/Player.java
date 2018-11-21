@@ -21,6 +21,11 @@ public class Player {
         return name;
     }
 
+    // TODO: 21.11.2018 restrict no more 2 cards
+    public void addHandCard(Card card) {
+        hand.getHandCards().add(card);
+    }
+
     @Override
     public String toString() {
         return "Player{" +

@@ -2,7 +2,7 @@ package kz.mix.game.model;
 
 import kz.mix.game.exception.SuitNotFoundException;
 
-public enum Suits {
+public enum SuitType {
     //J-
     SPADE(0), 
     HEARTS(1), 
@@ -12,7 +12,7 @@ public enum Suits {
 
     private int id;
 
-    Suits(int id) {
+    SuitType(int id) {
         this.id = id;
     }
 
@@ -20,12 +20,12 @@ public enum Suits {
         return id;
     }
 
-    public static Suits getSuitById(int id) {
+    public static SuitType getSuitById(int id) {
         if (id < 0 || id > 3) {
             throw new IllegalArgumentException("Значение id для масти должно быть от 0 до 3");
         }
 
-        for (Suits d : Suits.values()) {
+        for (SuitType d : SuitType.values()) {
             if (d.getId() == id) {
                 return d;
             }

@@ -1,8 +1,8 @@
 package kz.mix.game.model;
 
-import kz.mix.game.exception.DenominationNotFoundException;
+import kz.mix.game.exception.RankNotFoundException;
 
-public enum Denominations {
+public enum RankType {
     //J-
     TWO(0),
     THREE(1),
@@ -21,7 +21,7 @@ public enum Denominations {
 
     private int id;
 
-    Denominations(int id) {
+    RankType(int id) {
         this.id = id;
     }
 
@@ -29,17 +29,17 @@ public enum Denominations {
         return id;
     }
 
-    public static Denominations getDenominationById(int id) {
+    public static RankType getRankById(int id) {
         if (id <0 || id > 12) {
             throw new IllegalArgumentException("Значение id для номинала должно быть от 0 до 12");
         }
 
-        for (Denominations d : Denominations.values()) {
+        for (RankType d : RankType.values()) {
             if (d.getId() == id) {
                 return d;
             }
         }
 
-        throw new DenominationNotFoundException("Не найден номинал для данного значения id: " + id);
+        throw new RankNotFoundException("Не найден номинал для данного значения id: " + id);
     }
 }

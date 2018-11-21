@@ -1,28 +1,37 @@
 package kz.mix.game.model;
 
 import java.util.LinkedList;
+import java.util.List;
 
 public class Table {
-    private LinkedList<Card> table;
-    private LinkedList<Player> players;
+    private List<Card> cards;
+    private List<Player> players;
 
     public Table() {
-        this.table = new LinkedList<>();
+        this.cards = new LinkedList<>();
         this.players = new LinkedList<>();
     }
 
-    public LinkedList<Card> getTable() {
-        return table;
+    public List<Card> getCards() {
+        return cards;
     }
 
-    public LinkedList<Player> getPlayers() {
+    public List<Player> getPlayers() {
         return players;
+    }
+
+    public void addPlayer(Player player) {
+        players.add(player);
+    }
+
+    public void addCard(Card card) {
+        cards.add(card);
     }
 
     @Override
     public String toString() {
         return "Table{" +
-                "table=" + table +
+                "cards=" + cards +
                 ", players=" + players +
                 '}';
     }

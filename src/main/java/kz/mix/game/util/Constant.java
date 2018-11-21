@@ -5,17 +5,17 @@ public final class Constant {
     }
 
     // количество мастей
-    public static final int suitNumber = 4;
+    public static final int NUMBER_OF_SUITS = 4;
 
     // количество номиналов
-    public static final int denominationNumber = 13;
+    public static final int NUMBER_OF_RANKS = 13;
 
     // размер колоды
-    public static final int fullPack = 52;
+    public static final int NUMBER_OF_CARDS_IN_FULL_PACK = 52;
 
     // количество карт на руках
-    public static final int handCardNumber = 2;
+    public static final int NUMBER_OF_CARDS_IN_HAND = 2;
 
     // количество карт на столе
-    public static final int tableCardNumber = 5;
+    public static final int NUMBER_OF_CARDS_ON_TABLE = 5;
 }
